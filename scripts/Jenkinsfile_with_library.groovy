@@ -1,6 +1,6 @@
 @Library('example_shared_library@master') _
 
-def mvn = "/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/3.6.3/bin/mvn"
+def mvn = "/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven_3.8.6/bin/mvn"
 
 node {
     stage('Checkout SCM') {

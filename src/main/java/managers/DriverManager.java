@@ -1,6 +1,5 @@
 package managers;
 
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,7 +17,7 @@ import static utils.PropsConstant.*;
 public class DriverManager {
 
     private static WebDriver driver;
-    private static TestPropManager props = TestPropManager.getTestPropManager();
+    private static final TestPropManager props = TestPropManager.getTestPropManager();
 
     private DriverManager() {
     }

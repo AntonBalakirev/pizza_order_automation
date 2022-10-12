@@ -1,6 +1,5 @@
 package managers;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -11,11 +10,10 @@ public class TestPropManager {
     private static TestPropManager INSTANCE = null;
 
     private TestPropManager() {
-        try (FileInputStream stream =
-                     new FileInputStream(
-                             new File("src/main/resources/"
-                             + System.getProperty("env", "application") + ".properties"
-                     ))) {
+        try (FileInputStream stream = new FileInputStream(
+                "src/main/resources/"
+                        + System.getProperty("env", "application") + ".properties")
+        ) {
             properties.load(stream);
         } catch (IOException e) {
             e.printStackTrace();

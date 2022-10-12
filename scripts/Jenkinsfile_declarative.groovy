@@ -1,3 +1,5 @@
+def mvn = "/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven_3.8.6/bin/mvn"
+
 pipeline {
     agent any
     parameters {
@@ -7,20 +9,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "mvn clean compile"
+                sh "${mvn} clean compile"
             }
         }
         stage('Run Tests') {
             steps {
-                sh "mvn test -Dcucumber.filter.tags=${params.TAG}"
+                sh "${mvn} test -Dcucumber.filter.tags=${params.TAG}"
             }
         }
         stage('Allure Report Generation') {
             steps {
                 allure includeProperties: false,
                         jdk: '',
-                        results: [[path: 'target/reports/allure-results']],
-                        report: [[path: 'target/reports/allure-reports']]
+                        results: [[path: 'target/reports/allure-results']]
             }
         }
     }

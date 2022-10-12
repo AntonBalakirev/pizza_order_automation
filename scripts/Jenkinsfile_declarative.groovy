@@ -1,5 +1,3 @@
-def mvn = "/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/3.6.3/bin/mvn"
-
 pipeline {
     agent any
     parameters {
@@ -22,7 +20,7 @@ pipeline {
                 allure includeProperties: false,
                         jdk: '',
                         results: [[path: 'target/reports/allure-results']],
-                        reports: [[path: 'target/reports/allure-reports']]
+                        report: [[path: 'target/reports/allure-reports']]
             }
         }
     }

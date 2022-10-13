@@ -53,17 +53,18 @@ public class DriverManager {
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
+                break;
         }
     }
 
-    public static WebDriver getDriver(){
-        if (driver == null){
+    public static WebDriver getDriver() {
+        if (driver == null) {
             initDriver();
         }
         return driver;
     }
 
-    public static void quitDriver(){
+    public static void quitDriver() {
         getDriver().quit();
         driver = null;
     }

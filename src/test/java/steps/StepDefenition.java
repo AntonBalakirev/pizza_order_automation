@@ -42,7 +42,7 @@ public class StepDefenition {
 
     @Когда("^Проверка стоимости заказа '(.*)'$")
     public void checkOrderPrice(String orderPrice) {
-        log.info("Проверка стоимости заказа: {}", orderPrice);
+        log.info("Проверка стоимости заказа {}", orderPrice);
         app.getItemPage().proceedToCart().checkOrderPrice(orderPrice);
     }
 }

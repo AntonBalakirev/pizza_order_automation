@@ -40,7 +40,7 @@ public class StepDefenition {
         app.getItemPage().addToCart();
     }
 
-    @Когда("^Проверка стоимости заказа '(.*)'$")
+    @Когда("^Проверка стоимости заказа - '(.*)'$")
     public void checkOrderPrice(String orderPrice) {
         log.info("Проверка стоимости заказа {}", orderPrice);
         app.getItemPage().proceedToCart().checkOrderPrice(orderPrice);

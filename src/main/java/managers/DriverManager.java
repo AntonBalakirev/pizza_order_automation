@@ -48,7 +48,7 @@ public class DriverManager {
                 capabilities.setCapability(ChromeOptions.CAPABILITY, remoteChromeOptions);
                 try {
                     driver = new RemoteWebDriver(
-                            URI.create("http://130.193.49.85:4444/wd/hub").toURL(),
+                            URI.create("http://130.193.48.12:4444/wd/hub").toURL(),
                             capabilities);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
